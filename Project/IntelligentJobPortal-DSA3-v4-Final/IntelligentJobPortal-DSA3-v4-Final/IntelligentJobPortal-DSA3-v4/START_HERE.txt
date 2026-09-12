@@ -1,0 +1,37 @@
+NOVAHIRE — INTELLIGENT JOB PORTAL V4
+======================================
+
+1) Extract the ZIP.
+2) Open THIS project folder in VS Code.
+3) Open Terminal in VS Code.
+4) Run:
+
+   .\run-web.bat
+
+5) Wait for:
+
+   Self-test passed: 32/32
+   NOVAHIRE INTELLIGENT JOB PORTAL | WEB EDITION V4
+
+6) Open the address printed by the terminal, normally:
+
+   http://localhost:8080
+
+ROLE SWITCH
+-----------
+Use the role card in the left sidebar to switch between:
+- Job Seeker
+- Recruiter
+- Administrator
+
+IMPORTANT
+---------
+The normal website is designed as a real intelligent job portal.
+Academic labels are not shown in the product interface.
+The advanced DSA engine remains in the Java source for project evaluation and viva.
+
+Recruiter-created jobs are live and searchable for the current server session.
+The original data/jobs.csv remains unchanged so the project always starts from a clean seed dataset.
+
+If the browser does not open automatically, copy the printed localhost address into Chrome.
+Stop the server with Ctrl+C.

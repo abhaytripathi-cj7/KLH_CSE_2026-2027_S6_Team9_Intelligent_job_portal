@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Run Web Edition V2",
+      "request": "launch",
+      "mainClass": "com.dsa.jobportal.web.WebMain",
+      "cwd": "${workspaceFolder}",
+      "vmArgs": "--add-modules jdk.httpserver"
+    },
+    {
+      "type": "java",
+      "name": "Run Console Edition",
+      "request": "launch",
+      "mainClass": "com.dsa.jobportal.Main",
+      "cwd": "${workspaceFolder}",
+      "vmArgs": "--add-modules jdk.httpserver"
+    },
+    {
+      "type": "java",
+      "name": "Run Full Self Test",
+      "request": "launch",
+      "mainClass": "com.dsa.jobportal.SelfTest",
+      "cwd": "${workspaceFolder}",
+      "vmArgs": "--add-modules jdk.httpserver"
+    }
+  ]
+}

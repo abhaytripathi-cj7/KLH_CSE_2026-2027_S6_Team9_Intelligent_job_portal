@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <title>NovaHire — Smart Career Platform</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home" data-nav="home" aria-label="NovaHire home">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span><b>NovaHire</b><small>Career Intelligence</small></span>
+      </a>
+
+      <div class="role-card">
+        <div class="role-avatar" id="roleAvatar">PK</div>
+        <div class="role-copy"><small>Signed in as</small><b id="roleName">Pranav K.</b><span id="roleLabel">Job Seeker</span></div>
+        <button class="icon-btn" id="roleMenuBtn" title="Switch role" aria-label="Switch role">⌄</button>
+        <div class="role-menu" id="roleMenu" hidden>
+          <button data-role="candidate"><span>◉</span><div><b>Job Seeker</b><small>Discover & apply</small></div></button>
+          <button data-role="recruiter"><span>▣</span><div><b>Recruiter</b><small>Hire & manage</small></div></button>
+          <button data-role="admin"><span>◇</span><div><b>Admin</b><small>Trust & safety</small></div></button>
+        </div>
+      </div>
+
+      <nav class="side-nav" id="candidateNav">
+        <span class="nav-group">Workspace</span>
+        <button class="active" data-view="home"><span>⌂</span>Overview</button>
+        <button data-view="jobs"><span>⌕</span>Find Jobs</button>
+        <button data-view="saved"><span>♡</span>Saved Jobs <em id="savedBadge">0</em></button>
+        <button data-view="applications"><span>▤</span>Applications <em id="appBadge">0</em></button>
+        <button data-view="companies"><span>▦</span>Companies</button>
+        <span class="nav-group">Career</span>
+        <button data-view="insights"><span>↗</span>Career Insights</button>
+        <button data-view="profile"><span>◯</span>Profile</button>
+      </nav>
+
+      <nav class="side-nav" id="recruiterNav" hidden>
+        <span class="nav-group">Recruiting</span>
+        <button class="active" data-view="recruiter"><span>⌂</span>Dashboard</button>
+        <button data-view="recruiter-jobs"><span>▦</span>My Jobs</button>
+        <button data-view="applicants"><span>◎</span>Applicants</button>
+        <button data-view="interviews"><span>◫</span>Interviews</button>
+        <span class="nav-group">Company</span>
+        <button data-view="company-profile"><span>◇</span>Company Profile</button>
+      </nav>
+
+      <nav class="side-nav" id="adminNav" hidden>
+        <span class="nav-group">Platform</span>
+        <button class="active" data-view="admin"><span>⌂</span>Dashboard</button>
+        <button data-view="verification"><span>✓</span>Verification Queue</button>
+        <button data-view="reports"><span>!</span>Reports</button>
+        <button data-view="platform-analytics"><span>↗</span>Analytics</button>
+      </nav>
+
+      <div class="sidebar-foot">
+        <div class="online-dot"><i></i><span id="engineText">Connecting…</span></div>
+        <small>Smart hiring workspace</small>
+      </div>
+    </aside>
+
+    <main class="main-shell">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button>
+        <div class="global-search">
+          <span>⌕</span>
+          <input id="globalSearch" placeholder="Search jobs, skills or companies">
+          <kbd>⌘ K</kbd>
+        </div>
+        <div class="top-actions">
+          <button class="ghost-chip" id="smartAlertsBtn"><span class="pulse-dot"></span>Smart Alerts <b id="alertCount">3</b></button>
+          <button class="icon-btn notification-btn" id="notificationBtn" aria-label="Notifications">♢<i></i></button>
+          <button class="profile-pill" id="profileShortcut"><span>PK</span><b>Pranav</b><small>⌄</small></button>
+        </div>
+      </header>
+
+      <section class="view active" data-view="home" id="view-home">
+        <div class="welcome-line">
+          <div><span class="eyebrow" id="careerDate">CAREER PULSE</span><h1 id="welcomeGreeting">Welcome back, Pranav.</h1><p>There are fresh roles that line up with your skills. We filtered the noise for you.</p></div>
+          <button class="btn secondary" data-view-jump="profile">Improve profile <span>→</span></button>
+        </div>
+
+        <div class="hero-panel">
+          <div class="hero-copy">
+            <span class="hero-kicker">YOUR CAREER, BETTER MATCHED</span>
+            <h2>Find work that fits you. <em>Know why it fits.</em></h2>
+            <p>Search verified opportunities, understand your fit, spot skill gaps and make each application count.</p>
+            <form id="heroSearchForm" class="hero-search">
+              <label><span>⌕</span><input id="heroQuery" placeholder="Job title, skill or company" value="Backend Developer"></label>
+              <label><span>⌖</span><input id="heroLocation" placeholder="Location" value="Hyderabad"></label>
+              <button type="submit">Search Jobs <span>→</span></button>
+            </form>
+            <div class="quick-tags"><span>Popular:</span><button data-quick="Java">Java</button><button data-quick="Machine Learning">Machine Learning</button><button data-quick="Data Analyst">Data Analyst</button><button data-quick="Remote">Remote</button></div>
+          </div>
+          <div class="hero-insight">
+            <div class="mini-orbit"><span class="orbit-a"></span><span class="orbit-b"></span><b id="heroMatchValue">92%</b><small>best fit today</small></div>
+            <div class="insight-card"><span>✦</span><div><small>Best-fit signal</small><b id="heroSignal">Backend roles are your strongest lane</b></div></div>
+          </div>
+        </div>
+
+        <div class="metric-row" id="candidateMetrics">
+          <article><div class="metric-icon blue">↗</div><div><small>Applications</small><b id="metricApplications">0</b><span>this month</span></div></article>
+          <article><div class="metric-icon violet">♡</div><div><small>Saved jobs</small><b id="metricSaved">0</b><span>ready to review</span></div></article>
+          <article><div class="metric-icon green">✓</div><div><small>Strong matches</small><b id="metricStrong">—</b><span>above 80%</span></div></article>
+          <article><div class="metric-icon amber">◫</div><div><small>Profile strength</small><b id="metricProfile">82%</b><span>+8% possible</span></div></article>
+        </div>
+
+        <div class="content-grid main-grid">
+          <section class="panel recommended-panel">
+            <div class="section-head"><div><span class="eyebrow">PERSONALIZED FOR YOU</span><h3>Recommended jobs</h3></div><button class="text-btn" data-view-jump="jobs">View all <span>→</span></button></div>
+            <div id="recommendedHome" class="job-stack loading-block"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+          </section>
+
+          <aside class="side-stack">
+            <section class="panel skill-unlock">
+              <div class="section-head"><div><span class="eyebrow">SKILL UNLOCK</span><h3>One move, more opportunities.</h3></div><span class="spark">✦</span></div>
+              <p id="skillUnlockCopy">Analyzing which next skill could widen your strongest career path…</p>
+              <div id="skillUnlockChips" class="unlock-chips"></div>
+              <button class="btn dark full" id="skillUnlockBtn">Find my next skill</button>
+              <small class="privacy-note">Based on your profile and current openings.</small>
+            </section>
+            <section class="panel alert-panel">
+              <div class="alert-icon">◉</div><div><span class="eyebrow">SMART JOB ALERT</span><h3>3 fresh roles crossed your 85% threshold.</h3><p>We only surface alerts that are highly relevant to your profile.</p><button class="text-btn" data-view-jump="jobs">Review matches →</button></div>
+            </section>
+          </aside>
+        </div>
+
+        <section class="panel company-strip-panel">
+          <div class="section-head"><div><span class="eyebrow">COMPANIES HIRING NOW</span><h3>Explore verified employers</h3></div><button class="text-btn" data-view-jump="companies">Browse companies →</button></div>
+          <div id="homeCompanies" class="company-strip"></div>
+        </section>
+      </section>
+
+      <section class="view" data-view="jobs" id="view-jobs">
+        <div class="page-header"><div><span class="eyebrow">DISCOVER</span><h1>Find your next opportunity</h1><p>Explore roles with transparent fit, competition and skill-gap insights.</p></div><button class="btn secondary" id="openCompareBtn">Compare jobs <b id="compareCount">0</b></button></div>
+        <div class="job-search-shell">
+          <form id="jobSearchForm" class="search-toolbar">
+            <label class="wide"><span>⌕</span><input id="jobsQuery" placeholder="Job title, skill or company"></label>
+            <label><span>⌖</span><input id="jobsLocation" placeholder="Location"></label>
+            <button class="btn primary" type="submit">Search</button>
+          </form>
+          <div class="filter-grid">
+            <label>Work mode<select id="filterMode"><option value="">Any</option><option>Remote</option><option>Hybrid</option><option>On-site</option></select></label>
+            <label>Experience<select id="filterExperience"><option value="">Any</option><option value="0">Fresher</option><option value="1">1+ years</option><option value="2">2+ years</option></select></label>
+            <label>Minimum salary<select id="filterSalary"><option value="0">Any salary</option><option value="10">₹10 LPA+</option><option value="15">₹15 LPA+</option><option value="20">₹20 LPA+</option></select></label>
+            <label>Job type<select id="filterType"><option value="">Any</option><option>Full-time</option><option>Internship</option><option>Contract</option></select></label>
+            <label>Sort by<select id="sortJobs"><option value="relevance">Best match</option><option value="newest">Newest</option><option value="salary">Salary</option><option value="competition">Low competition</option></select></label>
+          </div>
+        </div>
+        <div class="search-summary"><div><b id="jobsCount">0 opportunities</b><span id="searchAssist"></span></div><button class="filter-reset" id="clearFilters">Clear filters</button></div>
+        <div id="jobsList" class="jobs-grid"></div>
+      </section>
+
+      <section class="view" data-view="saved" id="view-saved">
+        <div class="page-header"><div><span class="eyebrow">YOUR SHORTLIST</span><h1>Saved jobs</h1><p>Keep promising opportunities in one place and compare them before applying.</p></div></div>
+        <div id="savedList" class="jobs-grid"></div>
+      </section>
+
+      <section class="view" data-view="applications" id="view-applications">
+        <div class="page-header"><div><span class="eyebrow">APPLICATION TRACKER</span><h1>Know exactly where you stand</h1><p>Every application, next step and interview update in one clean pipeline.</p></div></div>
+        <div class="pipeline" id="applicationPipeline"></div>
+        <section class="panel application-table-panel">
+          <div class="section-head"><div><h3>Your applications</h3><p>Latest activity appears first.</p></div></div>
+          <div id="applicationsTable" class="application-table"></div>
+        </section>
+      </section>
+
+      <section class="view" data-view="companies" id="view-companies">
+        <div class="page-header"><div><span class="eyebrow">EMPLOYER DISCOVERY</span><h1>Companies worth knowing</h1><p>Explore verified employers, open roles and hiring activity.</p></div></div>
+        <div id="companyGrid" class="company-grid"></div>
+      </section>
+
+      <section class="view" data-view="insights" id="view-insights">
+        <div class="page-header"><div><span class="eyebrow">CAREER INTELLIGENCE</span><h1>Your career, in signals—not guesses</h1><p>See where your profile is strongest and what could improve your odds next.</p></div></div>
+        <div class="insight-metrics">
+          <article class="panel"><small>Application success rate</small><b id="successRate">—</b><span>Shortlist + interview outcomes</span></article>
+          <article class="panel"><small>Best-fit category</small><b id="bestCategory">Backend</b><span>Based on current profile</span></article>
+          <article class="panel"><small>Most requested skill</small><b id="topSkill">SQL</b><span>Across your matched roles</span></article>
+          <article class="panel"><small>Best location</small><b id="bestLocation">Hyderabad</b><span>Highest match density</span></article>
+        </div>
+        <div class="content-grid insight-grid">
+          <section class="panel"><div class="section-head"><div><span class="eyebrow">MATCH LANDSCAPE</span><h3>Where your profile fits best</h3></div></div><div id="careerBars" class="bar-chart"></div></section>
+          <section class="panel"><div class="section-head"><div><span class="eyebrow">PROFILE STRENGTH</span><h3>82% complete</h3></div><div class="ring small-ring"><b>82%</b></div></div><div class="strength-list"><div><span>Personal information</span><b>✓</b></div><div><span>Education</span><b>✓</b></div><div><span>Skills</span><b>✓</b></div><div><span>Projects</span><b>✓</b></div><div><span>Resume</span><b>✓</b></div><div class="missing"><span>Portfolio link</span><b>+</b></div></div></section>
+        </div>
+        <section class="panel application-strategy">
+          <div class="strategy-copy"><span class="eyebrow">APPLICATION STRATEGY</span><h3>Turn limited time into a stronger shortlist.</h3><p>Tell NovaHire how many hours you can spend this week. We will prioritize a compact set of high-fit opportunities so you can focus your effort where it matters most.</p></div>
+          <div class="strategy-controls"><label>Weekly application time<select id="strategyHours"><option value="4">4 hours</option><option value="6">6 hours</option><option value="8" selected>8 hours</option><option value="10">10 hours</option><option value="12">12 hours</option></select></label><button class="btn dark" id="buildStrategyBtn">Build my plan</button></div>
+          <div id="strategyResult" class="strategy-result"><div class="empty-strategy"><span>✦</span><div><b>Your focused application plan will appear here.</b><small>Balanced around fit and the time needed to prepare a strong application.</small></div></div></div>
+        </section>
+        <section class="panel opportunity-lens"><div><span class="eyebrow">OPPORTUNITY LENS</span><h3>Choose what matters most in your next move.</h3><p>Shift the emphasis between fit, career growth, compensation and lower competition. Your shortlist updates instantly.</p></div><div class="lens-options" id="lensOptions"><button class="active" data-lens="fit">Best Fit</button><button data-lens="growth">Growth</button><button data-lens="salary">Salary</button><button data-lens="competition">Low Competition</button></div><div id="lensJobs" class="mini-job-row"></div></section>
+      </section>
+
+      <section class="view" data-view="profile" id="view-profile">
+        <div class="page-header"><div><span class="eyebrow">YOUR PROFILE</span><h1>Build a profile recruiters can trust</h1><p>Your skills and preferences power smarter recommendations.</p></div><button class="btn primary" id="saveProfileTop">Save changes</button></div>
+        <div class="profile-layout">
+          <aside class="panel profile-summary"><div class="big-avatar">PK</div><h2>Pranav Kaveri</h2><p>Computer Science Student</p><div class="profile-score"><div class="ring"><b>82%</b><span>strength</span></div></div><small>Complete your portfolio to reach 90%.</small></aside>
+          <section class="panel profile-form-panel"><form id="profileForm" class="profile-form"><div class="form-section"><h3>Career preferences</h3><div class="two-fields"><label>Preferred role<input id="profileTitle" value="Backend Developer"></label><label>Preferred location<input id="profileLocation" value="Hyderabad"></label></div><label>Skills<textarea id="profileSkills" rows="4">Java, Spring, SQL, AWS</textarea><small>Separate skills with commas.</small></label></div><div class="form-section"><h3>About you</h3><div class="two-fields"><label>Education<input value="B.Tech — Computer Science"></label><label>Experience<input value="Fresher / Student"></label></div><label>Professional summary<textarea rows="4">Computer Science student focused on backend engineering, problem solving and intelligent systems.</textarea></label></div><div class="form-section"><h3>Preferences</h3><div class="two-fields"><label>Minimum salary<select><option>₹8 LPA</option><option selected>₹10 LPA</option><option>₹15 LPA</option></select></label><label>Work preference<select><option>Any</option><option selected>Hybrid</option><option>Remote</option><option>On-site</option></select></label></div></div><button class="btn primary" type="submit">Save profile</button></form></section>
+        </div>
+      </section>
+
+      <section class="view" data-view="recruiter" id="view-recruiter">
+        <div class="page-header"><div><span class="eyebrow">RECRUITER WORKSPACE</span><h1>Hire with context, not clutter</h1><p>Prioritize strong candidates, manage openings and keep interviews moving.</p></div><button class="btn primary" id="postJobBtn">+ Post a job</button></div>
+        <div class="metric-row recruiter-metrics"><article><div class="metric-icon blue">▦</div><div><small>Active jobs</small><b>5</b><span>2 closing soon</span></div></article><article><div class="metric-icon violet">◎</div><div><small>Applications</small><b>184</b><span>+23 this week</span></div></article><article><div class="metric-icon green">✓</div><div><small>Shortlisted</small><b>26</b><span>14.1% rate</span></div></article><article><div class="metric-icon amber">◫</div><div><small>Interviews</small><b>8</b><span>next 7 days</span></div></article></div>
+        <div class="content-grid recruiter-grid"><section class="panel"><div class="section-head"><div><span class="eyebrow">ACTIVE OPENINGS</span><h3>Hiring pipeline</h3></div><button class="text-btn" data-view-jump="recruiter-jobs">Manage jobs →</button></div><div id="recruiterOpenings" class="recruiter-openings"></div></section><section class="panel"><div class="section-head"><div><span class="eyebrow">TOP CANDIDATES</span><h3>High-fit applicants</h3></div><button class="text-btn" data-view-jump="applicants">View all →</button></div><div id="topCandidates" class="candidate-list"></div></section></div>
+      </section>
+
+      <section class="view" data-view="recruiter-jobs" id="view-recruiter-jobs">
+        <div class="page-header"><div><span class="eyebrow">JOB MANAGEMENT</span><h1>Your job postings</h1><p>Track applicants, close roles and keep listings current.</p></div><button class="btn primary" id="postJobBtn2">+ Post a job</button></div>
+        <div id="recruiterJobsTable" class="panel recruiter-jobs-table"></div>
+      </section>
+
+      <section class="view" data-view="applicants" id="view-applicants">
+        <div class="page-header"><div><span class="eyebrow">CANDIDATE MANAGEMENT</span><h1>Find signal in the applicant pool</h1><p>Rank by suitability and use privacy-first review when you want to reduce identity bias.</p></div><label class="privacy-toggle"><input id="anonymousToggle" type="checkbox"><span></span><b>Anonymous mode</b></label></div>
+        <div class="applicant-toolbar panel"><label>Opening<select id="applicantJobSelect"><option>Java Backend Developer</option><option>Software Engineer</option><option>Data Analyst</option></select></label><label>Sort<select id="applicantSort"><option value="match">Best match</option><option value="experience">Experience</option><option value="recent">Newest</option></select></label><div class="privacy-explain"><span>◌</span><p>Anonymous mode hides names and contact details until a candidate is shortlisted.</p></div></div>
+        <div id="applicantGrid" class="applicant-grid"></div>
+      </section>
+
+      <section class="view" data-view="interviews" id="view-interviews">
+        <div class="page-header"><div><span class="eyebrow">INTERVIEWS</span><h1>Keep every conversation on track</h1><p>Upcoming interviews and interviewer notes in one place.</p></div><button class="btn primary">+ Schedule interview</button></div>
+        <div id="interviewList" class="interview-list"></div>
+      </section>
+
+      <section class="view" data-view="company-profile" id="view-company-profile">
+        <div class="company-hero panel"><div class="company-logo xl">A</div><div><div class="verified-line">Amazon <span>✓ Verified Employer</span></div><h1>Build the future with teams that think at scale.</h1><p>Technology · 100,000+ employees · Hiring in Hyderabad, Bengaluru & Chennai</p></div><button class="btn secondary">Edit company profile</button></div>
+        <div class="content-grid company-profile-grid"><section class="panel"><h3>About</h3><p>NovaHire company profile for a verified technology employer. Recruiters can manage company information, benefits and active positions from here.</p><div class="benefit-grid"><span>Flexible work</span><span>Health cover</span><span>Learning budget</span><span>Relocation support</span></div></section><section class="panel"><h3>Employer trust</h3><div class="trust-check"><span>✓</span><div><b>Company identity verified</b><small>Organization details reviewed</small></div></div><div class="trust-check"><span>✓</span><div><b>Recruiter email verified</b><small>Official company domain</small></div></div><div class="trust-check"><span>✓</span><div><b>Job posting quality</b><small>No active policy flags</small></div></div></section></div>
+      </section>
+
+      <section class="view" data-view="admin" id="view-admin">
+        <div class="page-header"><div><span class="eyebrow">PLATFORM OPERATIONS</span><h1>Trust, quality and platform health</h1><p>Review employers, reports and marketplace activity.</p></div></div>
+        <div class="metric-row"><article><div class="metric-icon blue">◯</div><div><small>Total users</small><b>12.4K</b><span>+4.8% month</span></div></article><article><div class="metric-icon violet">◇</div><div><small>Companies</small><b>486</b><span>421 verified</span></div></article><article><div class="metric-icon green">▦</div><div><small>Active jobs</small><b>1,842</b><span>96% healthy</span></div></article><article><div class="metric-icon amber">!</div><div><small>Open reports</small><b>17</b><span>6 high priority</span></div></article></div>
+        <div class="content-grid admin-grid"><section class="panel"><div class="section-head"><div><span class="eyebrow">VERIFICATION QUEUE</span><h3>Companies awaiting review</h3></div><button class="text-btn" data-view-jump="verification">Open queue →</button></div><div id="adminQueueMini" class="admin-list"></div></section><section class="panel"><div class="section-head"><div><span class="eyebrow">RISK SIGNALS</span><h3>Recent reports</h3></div><button class="text-btn" data-view-jump="reports">Review reports →</button></div><div id="adminReportsMini" class="admin-list"></div></section></div>
+      </section>
+
+      <section class="view" data-view="verification" id="view-verification"><div class="page-header"><div><span class="eyebrow">EMPLOYER TRUST</span><h1>Verification queue</h1><p>Review company identity, email domain and posting quality.</p></div></div><div id="verificationList" class="panel admin-table"></div></section>
+      <section class="view" data-view="reports" id="view-reports"><div class="page-header"><div><span class="eyebrow">TRUST & SAFETY</span><h1>Reported content</h1><p>Investigate suspicious listings and user reports.</p></div></div><div id="reportsList" class="panel admin-table"></div></section>
+      <section class="view" data-view="platform-analytics" id="view-platform-analytics"><div class="page-header"><div><span class="eyebrow">PLATFORM ANALYTICS</span><h1>Marketplace health</h1><p>High-level hiring and trust signals for administrators.</p></div></div><div class="content-grid insight-grid"><section class="panel"><h3>Hiring activity</h3><div class="bar-chart admin-bars"><div><span>Applications</span><i style="--w:91%"></i><b>91%</b></div><div><span>Shortlists</span><i style="--w:67%"></i><b>67%</b></div><div><span>Interviews</span><i style="--w:48%"></i><b>48%</b></div><div><span>Offers</span><i style="--w:28%"></i><b>28%</b></div></div></section><section class="panel"><h3>Trust score</h3><div class="trust-big"><b>96.4</b><span>/100</span><p>Verified employer coverage is strong. Most open reports are low severity.</p></div></section></div></section>
+    </main>
+  </div>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside class="job-drawer" id="jobDrawer" aria-hidden="true">
+    <button class="drawer-close" id="closeJobDrawer">×</button>
+    <div id="jobDrawerContent"></div>
+  </aside>
+
+  <aside class="compare-drawer" id="compareDrawer" aria-hidden="true">
+    <div class="compare-head"><div><span class="eyebrow">OPPORTUNITY COMPARE</span><h2>Compare your shortlist</h2></div><button id="closeCompare">×</button></div>
+    <div id="compareContent" class="compare-content"></div>
+  </aside>
+
+  <div class="notification-panel" id="notificationPanel" hidden>
+    <div class="notification-head"><h3>Smart Alerts</h3><button id="closeNotifications">×</button></div>
+    <article><span class="notif-dot green"></span><div><b>3 strong matches posted today</b><p>All score above your 85% alert threshold.</p><small>12 min ago</small></div></article>
+    <article><span class="notif-dot blue"></span><div><b>Application moved to review</b><p>Your latest application has been opened by the recruiter.</p><small>2 hours ago</small></div></article>
+    <article><span class="notif-dot violet"></span><div><b>Skill opportunity detected</b><p>Docker appears in several high-fit backend roles.</p><small>Today</small></div></article>
+  </div>
+
+  <div class="modal" id="postJobModal" hidden aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="postJobTitle">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close post job form">×</button>
+      <span class="eyebrow">NEW OPENING</span>
+      <h2 id="postJobTitle">Post a job</h2>
+      <p>Create an opening for the local marketplace. It becomes searchable immediately while the server is running.</p>
+      <form id="postJobForm" class="profile-form">
+        <div class="two-fields">
+          <label>Job title<input id="postJobTitleInput" name="title" required value="Backend Engineer"></label>
+          <label>Company<input id="postJobCompany" name="company" required value="Nova Labs"></label>
+        </div>
+        <div class="two-fields">
+          <label>Location<input id="postJobLocation" name="location" required value="Hyderabad"></label>
+          <label>Work mode<select id="postJobMode" name="workMode"><option>Hybrid</option><option>Remote</option><option>On-site</option></select></label>
+        </div>
+        <div class="two-fields">
+          <label>Salary (LPA)<input id="postJobSalary" name="salary" type="number" min="1" max="100" required value="16"></label>
+          <label>Experience (years)<input id="postJobExperience" name="experience" type="number" min="0" max="30" required value="2"></label>
+        </div>
+        <div class="two-fields">
+          <label>Vacancies<input id="postJobVacancies" name="vacancies" type="number" min="1" max="100" required value="3"></label>
+          <label>Application effort (hours)<input id="postJobHours" name="applyHours" type="number" min="1" max="20" required value="2"></label>
+        </div>
+        <label>Required skills<textarea id="postJobSkills" name="skills" rows="3" required>Java, Spring, SQL, Docker</textarea></label>
+        <label>Description<textarea id="postJobDescription" name="description" rows="4" required>Build scalable backend services and collaborate with product teams.</textarea></label>
+        <button class="btn primary" type="submit">Publish job</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

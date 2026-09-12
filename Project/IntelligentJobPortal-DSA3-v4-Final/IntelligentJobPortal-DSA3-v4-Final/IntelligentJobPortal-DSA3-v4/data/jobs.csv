@@ -1,0 +1,31 @@
+id,title,company,location,skills,description,salaryLpa,experienceYears,vacancies,applyHours
+1,Java Backend Developer,Amazon,Hyderabad,Java|Spring|SQL|AWS,Build scalable backend services using Java and Spring Boot,18,1,3,3
+2,Software Engineer,Microsoft,Hyderabad,Java|Python|Algorithms|Azure,Develop cloud software and solve algorithmic problems,20,1,2,4
+3,Machine Learning Engineer,Google,Bengaluru,Python|Machine Learning|TensorFlow|SQL,Build ML pipelines and production learning systems,24,2,2,5
+4,Data Analyst,Deloitte,Hyderabad,SQL|Python|Power BI|Excel,Analyze business datasets and create dashboards,9,0,4,2
+5,Full Stack Developer,Oracle,Bengaluru,Java|Spring|React|SQL,Develop enterprise full stack applications,14,1,2,4
+6,Python Developer,TCS,Hyderabad,Python|Django|SQL|Git,Build web services and automation tools using Python,8,0,5,2
+7,Cloud Engineer,Accenture,Hyderabad,AWS|Azure|Linux|Python,Operate cloud infrastructure and automation workflows,11,1,3,3
+8,DevOps Engineer,Infosys,Pune,Docker|Kubernetes|Linux|AWS,Maintain CI CD systems and container platforms,10,1,2,3
+9,AI Engineer,NVIDIA,Bengaluru,Python|Deep Learning|C++|CUDA,Develop intelligent systems and optimized AI workloads,26,2,1,6
+10,Database Developer,Zoho,Chennai,SQL|MySQL|Java|Database,Design database logic and high performance queries,12,1,2,3
+11,Backend Engineer,Flipkart,Bengaluru,Java|Spring|Redis|SQL,Build high traffic commerce backend services,19,2,2,4
+12,Data Scientist,Walmart Global Tech,Bengaluru,Python|Machine Learning|SQL|Statistics,Create predictive models for retail analytics,22,2,2,5
+13,Associate Software Engineer,Cognizant,Hyderabad,Java|SQL|Git|Algorithms,Develop and test enterprise software modules,7,0,6,2
+14,Frontend Developer,Paytm,Noida,JavaScript|React|HTML|CSS,Build responsive web interfaces for payment products,12,1,2,3
+15,Cyber Security Analyst,Deloitte,Hyderabad,Network|Linux|Python|Security,Monitor threats and perform security analysis,10,1,2,3
+16,Java Developer,Capgemini,Hyderabad,Java|Spring|Hibernate|SQL,Create enterprise Java services and integrations,9,1,4,2
+17,ML Intern,Adobe,Bengaluru,Python|Machine Learning|NLP|Algorithms,Prototype machine learning models for document intelligence,8,0,2,2
+18,Software Development Engineer,Amazon,Bengaluru,Java|C++|Algorithms|AWS,Design reliable software for large scale systems,28,2,2,6
+19,Data Engineer,PhonePe,Bengaluru,Python|SQL|Spark|Kafka,Build reliable data pipelines for fintech workloads,18,2,2,5
+20,QA Automation Engineer,ServiceNow,Hyderabad,Java|Selenium|SQL|Git,Create automated test frameworks for cloud products,14,1,2,3
+21,Android Developer,Swiggy,Bengaluru,Java|Kotlin|Android|REST,Build consumer mobile experiences and API integrations,16,1,2,4
+22,Site Reliability Engineer,Google,Hyderabad,Linux|Python|Cloud|Algorithms,Improve reliability and performance of production systems,25,2,1,6
+23,Graduate Engineer Trainee,Wipro,Hyderabad,Java|Python|SQL|Communication,Work on software delivery and support assignments,6,0,8,1
+24,Business Intelligence Developer,Deloitte,Hyderabad,SQL|Power BI|Python|ETL,Create analytics reports and data transformation flows,11,1,3,3
+25,NLP Engineer,Microsoft,Bengaluru,Python|NLP|Machine Learning|Azure,Build language intelligence features and evaluation pipelines,23,2,1,5
+26,Spring Boot Developer,Infosys,Hyderabad,Java|Spring|REST|SQL,Build REST APIs and microservice components,10,1,3,3
+27,Junior Data Scientist,Tech Mahindra,Hyderabad,Python|SQL|Machine Learning|Statistics,Support modeling experiments and data analysis,8,0,3,2
+28,Platform Engineer,Razorpay,Bengaluru,Java|Linux|Docker|Kubernetes,Build internal platform services for fintech infrastructure,20,2,1,5
+29,SQL Developer,Oracle,Hyderabad,SQL|Oracle|PLSQL|Database,Develop stored logic and database reporting solutions,13,1,2,3
+30,Research Software Intern,NVIDIA,Hyderabad,C++|Python|Algorithms|Machine Learning,Prototype research software and algorithmic components,12,0,2,3
